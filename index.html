@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>the credits.</title>
+    <link rel="stylesheet" href="formstyle.css">
+    </head>
+
+<body>
+       <h1>Be added to the credits</h1>
+<form id="creditsForm">
+   <label for="UserName">Please enter your name:</label><br>
+   <input type="text" id="UserName" name="UserName" placeholder=" type your name here. " required><br><br>
+   <input type="button" value="add to list" id="add">
+   
+</form><br>
+
+
+
+<script>
+    document.getElementById("add").onclick= function() {
+        var node = document.createElement("li");
+        var text = document.getElementById("UserName").value;
+        var textnode=document.createTextNode(text);
+        node.appendChild(textnode);
+        document.getElementById("list").appendChild(node);
+    }
+</script>
+<ul id="list" style="list-style-type: none;"></ul>
+</body>
+ 
+<footer>
+    <h2>Thank you for participating in our exhibition</h2>
+
+ </footer>
+</html>

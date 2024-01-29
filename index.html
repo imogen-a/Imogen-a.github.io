@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
     <title>the credits.</title>
@@ -32,4 +32,71 @@
     <h2>Thank you for participating in our exhibition</h2>
 
  </footer>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Input Display</title>
+  <style>
+    body {
+      font-family: "Courier New", Courier, monospace;
+      margin: 20px;
+    }
+    #inputForm {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Be added to the credits</h1>
+
+  <form id="inputForm">
+    <label for="userInput">Enter Text:</label>
+    <input type="text" id="userInput" required>
+    <button type="button" onclick="addText()">Submit</button>
+  </form>
+
+  <h2>Entered Text:</h2>
+  <ul id="textList"></ul>
+
+  <script>
+    // Function to add user input to the list
+    function addText() {
+      var userInput = document.getElementById("userInput").value;
+
+      if (userInput.trim() !== "") {
+        var textList = document.getElementById("textList");
+        var listItem = document.createElement("li");
+        listItem.appendChild(document.createTextNode(userInput));
+        textList.appendChild(listItem);
+
+        // Clear the input field
+        document.getElementById("userInput").value = "";
+        
+        // Save the list to localStorage
+        saveListToLocalStorage();
+      }
+    }
+
+    // Function to save the list to localStorage
+    function saveListToLocalStorage() {
+      var textList = document.getElementById("textList").innerHTML;
+      localStorage.setItem("savedTextList", textList);
+    }
+
+    // Function to load the list from localStorage
+    function loadListFromLocalStorage() {
+      var savedTextList = localStorage.getItem("savedTextList");
+      if (savedTextList) {
+        document.getElementById("textList").innerHTML = savedTextList;
+      }
+    }
+
+    // Load the list from localStorage when the page loads
+    window.onload = loadListFromLocalStorage;
+  </script>
+</body>
 </html>

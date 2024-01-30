@@ -42,16 +42,23 @@
   <title>User Input Display</title>
   <style>
     body {
+      background-color: black;
       font-family: "Courier New", Courier, monospace;
       width: 50%;
       margin: auto;
       padding: 20px;
+      color: white;
     }
     #inputForm {
       margin-bottom: 20px;
       margin: auto;
       width: 50%;
     }
+    button {
+      font-size: inherit;
+    }
+
+
   </style>
 </head>
 <body>
@@ -64,7 +71,7 @@
   </form>
 
   <h2>Entered Text:</h2>
-  <ul id="textList"></ul>
+  <ul id="textList" style="list-style-type: none;"></ul>
 
   <script>
     // Function to add user input to the list

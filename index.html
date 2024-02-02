@@ -56,9 +56,14 @@
       width: 50%;
     }
     button {
-      font-size: inherit;
+      font-family: inherit;
+      margin: 2px;
+      border: 2px solid #e7e7e7;
     }
 
+    button:hover {
+      background-color: #e7e7e7;
+    }
 
   </style>
 </head>
@@ -67,6 +72,7 @@
 
   <form id="inputForm">
     <label for="userInput">Please enter your name:</label>
+    <br>
     <input type="text" id="userInput" required placeholder=" type your name here. ">
     <button type="button" onclick="addText()">join the credits.</button>
   </form>
